@@ -120,7 +120,7 @@ body {
 /* break point at 400px - maximum article picture header size */
 @media (min-width: 25rem) {
   .article-wrapper {
-    max-width: 21.875rem;
+    width: 21.875rem;
   }
 }
 
@@ -176,6 +176,7 @@ body {
 }
 
 .stats-number {
+  display: block;
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.22;
@@ -183,6 +184,7 @@ body {
 }
 
 .stats-text {
+  display: block;
   font-size: 0.625rem;
   color: #6b7082;
   letter-spacing: 1.5px;
