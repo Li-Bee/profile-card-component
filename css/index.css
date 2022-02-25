@@ -1,0 +1,204 @@
+/* ************** */
+/* CSS RESET */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+/* ************** */
+
+/* remove default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* box-sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* allow percentage-based heights in application */
+html,
+body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  /* for firefox */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* improve media defaults to cover width of container only */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* remove built-in form typography styles */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* avoid text overflows*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* create a root stacking context*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* ************** */
+/* BACKGROUND PATTERNS AND BODY FORMATTING */
+/* ************** */
+
+body {
+  /* background color and patterns */
+  background-color: #19a1ae;
+  background-image: url(../images/bg-pattern-top.svg),
+    url(../images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat, no-repeat;
+  /* needs to be cover so actual size otherwise will fit container and background position wont work */
+  background-size: cover, cover;
+  background-position: right 43vw bottom 64vh, left 46vw top 57vh;
+
+  /* center the card on screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  /* style defaults */
+  color: #2e3349;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
+}
+
+@media (min-width: 25rem) {
+  body {
+    background-position: right 45vw bottom 30vh, left 45vw top 37vh;
+  }
+}
+
+/* ************** */
+/* PROFILE CARD */
+/* ************** */
+
+/* MOBILE FIRST - 375PX */
+
+.article-wrapper {
+  /* 326 / 375 mobile */
+  width: 86.9%;
+  background-color: #fff;
+  box-shadow: 0px 50px 100px -20px rgba(8, 70, 94, 0.504835);
+  border-radius: 15px;
+  /* hides overflow of bubble picture */
+  overflow: hidden;
+}
+
+/* break point at 400px - maximum article picture header size */
+@media (min-width: 25rem) {
+  .article-wrapper {
+    max-width: 21.875rem;
+  }
+}
+
+.avatar {
+  /* set to relative to get z-index to work */
+  position: relative;
+  z-index: 1;
+  /* removed the slight green line */
+  background-color: #fff;
+  border: 5px solid #fff;
+  margin: 0 auto;
+  border-radius: 50%;
+  margin-top: -3.625rem;
+  /* minus 5px for the border */
+  margin-bottom: 1.1875rem;
+}
+
+.article-text {
+  padding-left: 6rem;
+  padding-right: 6rem;
+  text-align: center;
+  padding-bottom: 1.6875rem;
+  border-bottom: 1px solid #e8e9ec;
+}
+
+.article-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.22;
+}
+
+.age {
+  color: #6b7082;
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-left: 0.53125rem;
+  line-height: 1.22;
+}
+
+.location {
+  color: #6b7082;
+  font-size: 0.875rem;
+  line-height: 1.21;
+}
+
+.article-stats {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2.56rem;
+}
+
+.stats-number {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.22;
+  margin-bottom: 0.5625rem;
+}
+
+.stats-text {
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  color: #6b7082;
+  letter-spacing: 1.5px;
+  line-height: 1.2;
+}
+
+/* ************** */
+/* FOOTER */
+/* ************** */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
